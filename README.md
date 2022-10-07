@@ -36,4 +36,4 @@ Avalanche discharge logic-side power was decoupled from board's 5V power, and ne
 ![Schema of modified RadiationD circut](https://github.com/malipek/arduino-gm/blob/master/media/modified_GM_counter.png?raw=true)
 
 # Diclaimer
-**Modyfications shown abowe are for informational purposes only. Any modification to electrical equipment based on materials published will be made on your own risk. I will not be liable for any damage caused by following information published in this repository.**
+**Modyfications shown above are for informational purposes only. Any modification to electrical equipment based on materials published will be made on your own risk. I will not be liable for any damage caused by following information published in this repository.**
