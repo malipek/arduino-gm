@@ -29,9 +29,9 @@ OLED displays
 * **Danger! Geiger tube is powered with high voltage! Don't touch bare metal connections when the board is powered! Discharge the step-up converter before you start the work, for example by attaching voltmeter in the 1000V range to Geiger tube, until voltage drops to 0.**
 
 ## RadiationD-v1.1(CAJOE) modification
-Because the system uses Arduino as a counter, all signaling circuits were removed from the GM board. It allowed reducing power consumption, down to 8mA.
+Because the system uses Arduino as a counter, all signaling circuits were removed from the GM board. It allowed reducing power consumption down to 8mA.
 
-Avalanche discharge logic-side power was decoupled from board's 5V power, and needs to be supplied externally, from Arduino's VCC pin. This allows operating in both: 5V and 3.3V logis.
+Avalanche discharge logic-side power was decoupled from board's 5V power, and needs to be supplied externally, from Arduino's VCC pin. This allows operating in both: 5V and 3.3V logic.
 
 ![Schema of modified RadiationD circut](https://github.com/malipek/arduino-gm/blob/master/media/modified_GM_counter.png?raw=true)
 
