@@ -5,6 +5,7 @@ Arduino-controlled GM counter and temp/humidity meter based on modified Radiatio
 
 ![Photo of the prototyped system](https://github.com/malipek/arduino-gm/blob/master/media/gm-counter.png?raw=true)
 
+![Schematic of system connections](https://github.com/malipek/arduino-gm/blob/master/media/Schematic_GM_connection_2022-10-09.png?raw=true)
 
 ## External dependencies
 
