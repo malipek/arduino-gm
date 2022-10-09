@@ -16,7 +16,7 @@ OLED displays
 
 ## Components
 
-* Arduino controller 5 or 3.3V (tested on Arduino Uno and Arduino Pro Micro), **powered with 5V USB**
+* Arduino controller 5V or 3.3V (tested on Arduino Uno and Arduino Pro Micro), **powered with 5V USB**
 * 0.96" SSD1306 128x64 OLED
 * DHT 22
 * Modified RadiationD-v1.1(CAJOE) with J305β (check below)
