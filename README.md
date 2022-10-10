@@ -17,7 +17,7 @@ OLED displays
 ## Components
 
 * Arduino controller 5V or 3.3V (tested on Arduino Uno and Arduino Pro Micro), **powered with 5V USB**
-* 0.96" SSD1306 128x64 OLED
+* 0.96" SSD1306 128x64 OLED in I2C mode (check vendor's documentation)
 * DHT 22
 * Modified RadiationD-v1.1(CAJOE) with J305β (check below)
 * 2N7000 N-MOSFET
@@ -26,7 +26,8 @@ OLED displays
 
 * It's important that Arduino board is powered with stabilized 5V (stable 5V is present on Arduino RAW pin)
 * System works with both 5V and 3.3V logic level
-* Data is refreshed approximately every 1 hour to extend lifespan of the Geiger tube
+* Data is refreshed approximately every 1 hour, after measurement GM couner is powered down, to extend lifespan of the Geiger tube
+* OLED display is set to I2C mode
 * **Danger! Geiger tube is powered with high voltage! Don't touch bare metal connections when the board is powered! Discharge the step-up converter before you start the work, for example by attaching voltmeter in the 1000V range to Geiger tube, until voltage drops to 0.**
 
 ## RadiationD-v1.1(CAJOE) modification
