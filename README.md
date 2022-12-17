@@ -44,8 +44,8 @@ Pulses on avalanche discharge on ``VIN`` output
 
 Single pulse on avalanche discharge on ``VIN`` output, scope view and analysis:
 
-* pulse width: approximately 0.3ms
-* pulse height: 3V
+* pulse width: approximately 0.34ms
+* pulse height: 3.1V
 
 ![VIN output for single pulse as seen on oscilloscope](https://github.com/malipek/arduino-gm/blob/master/media/vin_pulse_scope.png?raw=true)
 
