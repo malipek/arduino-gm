@@ -35,7 +35,19 @@ Because the system uses Arduino as a counter, all signaling circuits were remove
 
 Avalanche discharge logic-side power was decoupled from board's 5V power, and needs to be supplied externally, from Arduino's VCC pin. This allows operating in both: 5V and 3.3V logic.
 
-![Schema of modified RadiationD circut](https://github.com/malipek/arduino-gm/blob/master/media/modified_GM_counter.png?raw=true)
+![Schema of modified RadiationD circuit](https://github.com/malipek/arduino-gm/blob/master/media/modified_GM_counter.png?raw=true)
 
-# Diclaimer
-**Modyfications shown above are for informational purposes only. Any modification to electrical equipment based on materials published will be made on your own risk. I will not be liable for any damage caused by following information published in this repository.**
+### Example VIN output for 3.3V-logic
+
+Pulses on avalanche discharge on ``VIN`` output
+![VIN output logic analyzer graph showing pulses](https://github.com/malipek/arduino-gm/blob/master/media/vin_logic_analysis.png?raw=true)
+
+Single pulse on avalanche discharge on ``VIN`` output, scope view and analysis:
+
+* pulse width: approximately 0.3ms
+* pulse height: 3V
+
+![VIN output for single pulse as seen on oscilloscope](https://github.com/malipek/arduino-gm/blob/master/media/vin_pulse_scope.png?raw=true)
+
+# Disclaimer
+**Modifications shown above are for informational purposes only. Any modification to electrical equipment based on materials published will be made on your own risk. I will not be liable for any damage caused by following information published in this repository.**
