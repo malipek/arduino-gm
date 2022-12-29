@@ -93,11 +93,12 @@ void loop(){//main cycle - runs forever
     rad = cpm/123.15; //J305 beta CPM to uSv/h ratio
     h = dht.readHumidity();
     t = dht.readTemperature();
-    Serial.print(F("{\"rad1\":"));
+    Serial.print(F("{"));
+    Serial.print("\"rad1\":");
     Serial.print(rad);
-    Serial.print(F(",\"temp1\":"));
+    Serial.print(",\"temp1\":");
     Serial.print(t);
-    Serial.print(F(",\"hum1\":"));
+    Serial.print(",\"hum1\":");
     Serial.print(h);
     Serial.println(F("}"));                //cpm to uSv/h ration for the tube
     display.clearDisplay();    
