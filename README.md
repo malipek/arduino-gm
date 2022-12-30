@@ -1,6 +1,12 @@
 # arduino-gm
 Arduino-controlled GM counter and temp/humidity meter based on modified RadiationD-v1.1(CAJOE). Radiation level, temperature, and humidity are displayed on OLED and transmitted via USB serial in JSON format, for example: `{"rad1":0.18,"temp1":20.60,"hum1":71.50}`
 
+---
+
+Example data visualization with charts is [shown here](https://github.com/malipek/arduino-gm/blob/master/CHARTS.md).
+
+---
+
 2N7000 N-MOSFET is used to enable/disable power for modified RadiationD board. It's necessary for Arduino boards with 3.3V logic level.
 
 ![Photo of the prototyped system](https://github.com/malipek/arduino-gm/blob/master/media/gm-counter.png?raw=true)
