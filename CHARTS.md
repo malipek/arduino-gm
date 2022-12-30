@@ -22,7 +22,6 @@ Reading data from DynamoDB table can be achieved with [AWS Lambda with public Fu
 * [AWS Lambda functions](https://github.com/malipek/arduino-gm/tree/master/AWS-LAMBDA)
 * [Google Charts on S3 Static HTML site](https://github.com/malipek/arduino-gm/tree/master/S3)
 
-s
 ## Security consideration
 
 Due to possible ["Denial of Wallet attacks"](https://www.sciencedirect.com/science/article/pii/S221421262100079X), it's recommended to disable on-demand scaling for DynamoDB and limit provisioned capacity to the lowest possible numbers. Alerting on request throttling should be [enabled in CloudWatch](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/creating-alarms.html).
