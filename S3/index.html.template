@@ -55,7 +55,7 @@
 
             var data = new google.visualization.DataTable();
             data.addColumn('datetime', 'Date');
-            data.addColumn('number', 'Radiation [µS/h]');
+            data.addColumn('number', 'Radiation [µSv/h]');
             data.addRows(rows_rad);
             var options = {'titlePosition':'none',
                             'width':1200,
@@ -65,7 +65,7 @@
                             colors: ['red'],
                             explorer: {actions:['dragToZoom','rightClickToReset']},
                             hAxis: { title:'Date' },
-                            vAxis: { title: 'Radiation [µS/h]'}
+                            vAxis: { title: 'Radiation [µSv/h]'}
                         };
             var chart = new google.visualization.LineChart(document.getElementById('chart_rad'));
             chart.draw(data, options);
