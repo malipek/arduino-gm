@@ -1,17 +1,18 @@
 const region = "eu-west-1";
+const expiry = 30 * 24 * 3600; //month
+
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const { DynamoDBDocumentClient } = require("@aws-sdk/lib-dynamodb");
 const { PutCommand } = require("@aws-sdk/lib-dynamodb");
 
 const client = new DynamoDBClient( { region: region } );
 const documentClient = DynamoDBDocumentClient.from(client);
-const expiry = 30 * 24 * 3600; //month
 
 exports.handler = async (event) => {
     let responseBody = "";
     let statusCode = 0;
     let record = event;
-    record.timestamp = Date.now();
+    record.timestamp = Math.floor(Date.now()/1000);
     record.exp = record.timestamp + expiry;
 
     const params = {

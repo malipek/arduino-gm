@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pawel's office sensors</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['line']});
+        google.charts.load('current', {'packages':['corechart']});
+
+        var rows_temp = [];
+        var rows_hum = [];
+        var rows_rad = [];
+
+        function drawTempChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('datetime', 'Date');
+            data.addColumn('number', 'Temperature [°C]');
+            data.addRows(rows_temp);
+            const options = {'titlePosition':'none',
+                            'width':1200,
+                            'height':200,
+                            curveType: 'function',
+                            legend: 'none',
+                            colors: ['blue'],
+                            explorer: {actions:['dragToZoom','rightClickToReset']},
+                            hAxis: { title:'Date' },
+                            vAxis: { title: 'Temperature [°C]'}
+
+                        };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_temp'));
+            chart.draw(data, options);
+        }
+        function drawHumChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('datetime', 'Date');
+            data.addColumn('number', 'Humidity [%]');
+            data.addRows(rows_hum);
+            var options = {'titlePosition':'none',
+                            'width':1200,
+                            'height':200,
+                            curveType: 'function',
+                            legend: 'none',
+                            colors: ['green'],
+                            explorer: {actions:['dragToZoom','rightClickToReset']},
+                            hAxis: { title:'Date' },
+                            vAxis: { title: 'Humidity [%]'}
+                        };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_hum'));
+            chart.draw(data, options);
+        }
+
+        function drawRadChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('datetime', 'Date');
+            data.addColumn('number', 'Radiation [µS/h]');
+            data.addRows(rows_rad);
+            var options = {'titlePosition':'none',
+                            'width':1200,
+                            'height':200,
+                            curveType: 'function',
+                            legend: 'none',
+                            colors: ['red'],
+                            explorer: {actions:['dragToZoom','rightClickToReset']},
+                            hAxis: { title:'Date' },
+                            vAxis: { title: 'Radiation [µS/h]'}
+                        };
+            var chart = new google.visualization.LineChart(document.getElementById('chart_rad'));
+            chart.draw(data, options);
+        }
+
+        var lambda = [];
+
+        fetch('https://AWS-LAMBDA/get-records.js',{credentials: 'omit'}).then(
+            res => res.json()
+        ).then(
+            res => { 
+                lambda = res;
+                lambda.sort((a,b) => { return a.timestamp - b.timestamp });
+                var i=0;
+
+                lambda.forEach(element => {
+                        rows_temp[i]=[new Date(element.timestamp*1000),element.temp1];
+                        rows_hum[i]=[new Date(element.timestamp*1000),element.hum1];
+                        rows_rad[i]=[new Date(element.timestamp*1000),element.rad1];
+                        i++;
+                });
+                drawTempChart();
+                drawHumChart();
+                drawRadChart();
+
+            }
+        );
+
+        
+
+
+
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_temp"></div>
+    <div id="chart_hum"></div>
+    <div id="chart_rad"></div>
+  </body>
+</html>
