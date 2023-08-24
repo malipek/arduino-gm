@@ -66,7 +66,7 @@ void tube_impulse(){       //interrupt handler
 
 void setup(){             //setup (runs on microcontroler init)
   counts = 0;             //reset counts
-  multiplier = MAX_PERIOD / LOG_PERIOD; //calculate multiplier for CPM
+  multiplier = (float)MAX_PERIOD / (float)LOG_PERIOD; //calculate multiplier for CPM
   Serial.begin(9600);                   //serial console (for debug)
   attachInterrupt(digitalPinToInterrupt(INTERRUPT_PIN), tube_impulse, FALLING);  //attach handler to the interrupt, on the falling edge
   pinMode(ENABLE_PIN,OUTPUT);                 //set enable pin mod to output
