@@ -46,7 +46,7 @@
 #define ENABLE_PIN 8      //Arduino digital PIN for enabling GM power
 #define INTERRUPT_PIN 7
 #define LOG_PERIOD 300000  //Logging period in milliseconds
-#define MAX_PERIOD 300000  //5m in (for CPM)
+#define MAX_PERIOD 60000  //1min (for CPM)
 #define DISABLE_PERIOD 1498000 //Off-time period in miliseconds
 
 #define OLED_RESET     9 // Reset pin # (or -1 if sharing Arduino reset pin)
