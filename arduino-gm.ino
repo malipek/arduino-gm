@@ -47,7 +47,7 @@
 #define INTERRUPT_PIN 7
 #define LOG_PERIOD 60000  //Logging period in milliseconds
 #define MAX_PERIOD 60000  //1m in (for CPM)
-#define DISABLE_PERIOD 3520000 //Off-time period in miliseconds
+#define DISABLE_PERIOD 1760000 //Off-time period in miliseconds
 
 #define OLED_RESET     9 // Reset pin # (or -1 if sharing Arduino reset pin)
 #define SCREEN_ADDRESS 0x3C ///< See datasheet for Address
@@ -107,7 +107,7 @@ void loop(){//main cycle - runs forever
     display.print(rad);
     display.print(F(" "));
     display.print(char(229)); //micro
-    display.println(F("Sv/h"));
+    display.println(F("uSv/h"));
     display.setCursor(0,10);
     display.print(F("Temperature: "));
     display.print(t);
