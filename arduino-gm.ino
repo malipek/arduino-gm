@@ -56,7 +56,7 @@ DHT dht(DHTPIN, DHTTYPE);
 
 unsigned long counts; //number of counts in the given timeframe
 unsigned long cpm; //calculated counts per minute (CPM)
-unsigned int multiplier;  //multiplier for counts to CPM conversion
+float multiplier;  //multiplier for counts to CPM conversion
 unsigned long previousMillis;  //variable for time measurement
 
 
@@ -107,7 +107,7 @@ void loop(){//main cycle - runs forever
     display.print(rad);
     display.print(F(" "));
     display.print(char(229)); //micro
-    display.println(F("uSv/h"));
+    display.println(F("Sv/h"));
     display.setCursor(0,10);
     display.print(F("Temperature: "));
     display.print(t);
