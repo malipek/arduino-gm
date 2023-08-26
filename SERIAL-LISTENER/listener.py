@@ -31,4 +31,5 @@ while True:
             decoded_bytes = decoded_bytes + '}'
     client = boto3.client('lambda')
     response = client.invoke( FunctionName = "put-records", InvocationType = "RequestResponse", Payload = decoded_bytes)
+    print(decoded_bytes+'\n')
     print(response['Payload'].read())
