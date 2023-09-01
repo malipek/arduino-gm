@@ -18,7 +18,7 @@ while True:
                 data = data.strip('ï»¿')
                 data_json = json.loads(data)
                 decoded_bytes = decoded_bytes.replace('}', '')
-                decoded_bytes = decoded_bytes + ',"temp2":'+data_json[0]['temp2m']
+                decoded_bytes = decoded_bytes + ',"temp2":'+str(data_json[0]['temp2m'])+',"pressure":'+str(data_json[0]['pressure'])
                 decoded_bytes = decoded_bytes + '}'
         except requests.exceptions.RequestException as e:
             print(e)
